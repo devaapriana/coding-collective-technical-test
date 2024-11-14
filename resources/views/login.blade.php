@@ -43,7 +43,7 @@
 
             $.get('/sanctum/csrf-cookie', function(response) {
                 $.ajax({
-                    url: "/login",
+                    url: "/api/login",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': csrfToken,
@@ -58,7 +58,7 @@
                     }),
                     success: function(result) {
                         alert(result.message)
-                        window.location.href = '/attendance'
+                        window.location.href = '/attendances'
                     }
                 });
             });
