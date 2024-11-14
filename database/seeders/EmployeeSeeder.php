@@ -2,44 +2,43 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Employee;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
-class UserSeeder extends Seeder
+class EmployeeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        User::create([
+        Employee::create([
             'name' => 'Rendra',
             'email' => 'rendragituloh@gmail.com',
-            'password' => Hash::make('user123'),
-            'status' => 'active'
+            'date_of_birth' => '2011-11-11',
+            'city' => 'Jogja'
         ]);
 
-        User::create([
+        Employee::create([
             'name' => 'Khariz',
             'email' => 'kharizajaah@gmail.com',
-            'password' => Hash::make('user123'),
-            'status' => 'active'
+            'date_of_birth' => '2012-12-12',
+            'city' => 'Bantul'
         ]);
 
-        User::create([
+        Employee::create([
             'name' => 'Joko',
             'email' => 'jokoterdepan@gmail.com',
-            'password' => Hash::make('user123'),
-            'status' => 'active'
+            'date_of_birth' => '2010-10-10',
+            'city' => 'Sleman'
         ]);
 
-        User::create([
+        Employee::create([
             'name' => 'Mariyam',
             'email' => 'mariyamyuk@gmail.com',
-            'password' => Hash::make('user123'),
-            'status' => 'active'
+            'date_of_birth' => '2009-9-9',
+            'city' => 'Gunung Kidul'
         ]);
 
     }
