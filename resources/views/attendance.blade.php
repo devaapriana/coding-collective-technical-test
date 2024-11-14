@@ -5,15 +5,17 @@
     <div class="flex w-full gap-4 justify-around">
 
         <div
-            class="w-full lg:w-[40%] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="w-full self-center lg:w-[40%] h-fit p-3 items-center flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome
                     {{ Auth::user()->name }}</h5>
             </a>
-            <span class="mb-3 font-normal text-gray-400 dark:text-gray-400">{{ Auth::user()->email }} | </span>
-            <span class="mb-3 font-normal text-gray-400 dark:text-gray-400">{{ Auth::user()->employee->city }}</span>
+            <div>
+                <span class="font-normal text-gray-400 dark:text-gray-400">{{ Auth::user()->email }} | </span>
+                <span class="font-normal text-gray-400 dark:text-gray-400">{{ Auth::user()->employee->city }}</span>
+            </div>
             <br>
-            <div class="flex gap-2">
+            <div class="flex -mt-5 gap-2">
                 <form action="{{ route('attendance.active') }}" method="POST">
                     @csrf
                     <input type="hidden" class="userTimezone" name="userTimezone">
