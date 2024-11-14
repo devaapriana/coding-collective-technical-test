@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-    <div class="relative mx-auto overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="relative w-fit mx-auto overflow-x-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -33,7 +33,7 @@
                         <td class="px-6 py-4">
                             <label class="inline-flex items-center me-5 cursor-pointer">
                                 <input type="checkbox" value="{{ $user->status }}" class="sr-only peer"
-                                    onchange="confirm('ubah') ? changeStatus(this) : ''" data-id="{{ $user->id }}"
+                                    onchange="changeStatus(this)" data-id="{{ $user->id }}"
                                     @if ($user->status == 'active') checked @endif>
                                 <div
                                     class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600">
@@ -70,7 +70,6 @@
                     status: currentStatus
                 }),
                 success: function(result) {
-                    console.log(result.message);
                     alert(result.message)
                     window.location.href = '/'
                 }
