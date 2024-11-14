@@ -23,9 +23,17 @@
                         class="block py-2 px-3 {{ request()->path() == '/' ? 'text-white bg-blue-700 md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100' }}  rounded md:bg-transparent  md:p-0 "
                         aria-current="page">User Management</a>
                 </li>
+
                 <li>
                     <a href="{{ route('attendance') }}"
-                        class="block py-2 px-3 {{ request()->path() == 'attendance' ? 'text-white bg-blue-700 md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100' }}  rounded md:bg-transparent  md:p-0 ">Attendance</a>
+                        class="block py-2 px-3 {{ request()->path() == 'attendances' ? 'text-white bg-blue-700 md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100' }}  rounded md:bg-transparent  md:p-0 ">
+                        Employees Attendance</a>
+                </li>
+
+                <li>
+                    <a href="{{ route('attendance.report') }}"
+                        class="block py-2 px-3 {{ request()->path() == 'attendances/reports' ? 'text-white bg-blue-700 md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100' }}  rounded md:bg-transparent  md:p-0 ">
+                        Attendance Reports</a>
                 </li>
 
             </ul>

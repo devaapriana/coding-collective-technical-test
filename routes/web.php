@@ -10,7 +10,7 @@ Route::get('/test', function () {
 })->middleware('auth:sanctum');
 
 Route::get('/', [UserController::class, 'index']);
-Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::patch('/users/{user}', [UserController::class, 'update'])->name('user.update');
 
 Route::middleware('auth:sanctum')->prefix('attendances')->group(function () {
@@ -18,4 +18,5 @@ Route::middleware('auth:sanctum')->prefix('attendances')->group(function () {
     Route::put('/{attendance}', [AttendanceController::class, 'update'])->name('attendance.update');
     Route::post('active', [AttendanceController::class, 'active'])->name('attendance.active');
     Route::post('inactive', [AttendanceController::class, 'inactive'])->name('attendance.inactive');
+    Route::get('/reports', [AttendanceController::class, 'reports'])->name('attendance.report');
 });

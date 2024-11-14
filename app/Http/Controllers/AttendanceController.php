@@ -43,4 +43,10 @@ class AttendanceController extends Controller
         $attendance->update(['status' => $status, 'time' => Carbon::now()->setTimezone($request->userTimezone)]);
         return response()->json(['message' => 'berhasil update status']);
     }
+
+    public function reports()
+    {
+        $attendances = Attendance::with('employee')->orderBy('created_at')->paginate(5);
+        return view('report', compact('attendances'));
+    }
 }
