@@ -17,6 +17,6 @@ class UserController extends Controller
     {
         $status = $request->input('status') == 'active' ? 'inactive' : 'active';
         $user->update(['status' => $status]);
-        return response()->json(['message' => 'berhasil update status']);
+        return response()->json(['message' => 'Status updated successfully']);
     }
 }

@@ -41,7 +41,7 @@ class AttendanceController extends Controller
     {
         $status = $request->input('status') == 'active' ? 'inactive' : 'active';
         $attendance->update(['status' => $status, 'time' => Carbon::now()->setTimezone($request->userTimezone)]);
-        return response()->json(['message' => 'berhasil update status']);
+        return response()->json(['message' => 'Status update successfully']);
     }
 
     public function reports()

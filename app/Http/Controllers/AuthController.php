@@ -23,7 +23,7 @@ class AuthController extends Controller
             $user = Auth::user();
             $token = $user->createToken('sanctum')->plainTextToken;
             return response()->json([
-                'message' => 'Login berhasil'
+                'message' => 'Login successfully'
             ])->cookie(
                     'XSRF-TOKEN',
                     $token,
@@ -37,7 +37,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'message' => 'Login gagal'
+            'message' => 'Login Failed'
         ]);
     }
 
