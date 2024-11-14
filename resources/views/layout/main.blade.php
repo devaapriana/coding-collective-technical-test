@@ -15,7 +15,7 @@
 <body>
     @include('layout.components.navbar')
 
-    <main class="flex w-full p-10 h-screen ">
+    <main class="w-full p-10 ">
         @yield('content')
     </main>
 
