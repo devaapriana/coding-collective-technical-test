@@ -1,4 +1,5 @@
 @extends('layout.main')
+@section('title', 'Employee Attendance')
 @section('content')
     <h1 class="font-bold text-center mb-4">Employee Attendance</h1>
 
